@@ -17,6 +17,14 @@ const routes = [
         },
         component: () => import('@/pages/Login.vue')
     },
+    {
+        path: '/sign-up',
+        name: 'Sign up',
+        meta:{
+            layout: 'empty-layout',
+        },
+        component: () => import('@/pages/SignUp.vue')
+    },
 ];
 const router = createRouter({
     history: createWebHistory(),
