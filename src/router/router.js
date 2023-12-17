@@ -10,12 +10,12 @@ const routes = [
         component: () => import('@/pages/Main.vue')
     },
     {
-        path: '/login',
-        name: 'Login',
+        path: '/sign-in',
+        name: 'Sign in',
         meta:{
         layout: 'empty-layout',
         },
-        component: () => import('@/pages/Login.vue')
+        component: () => import('@/pages/SignIn.vue')
     },
     {
         path: '/sign-up',

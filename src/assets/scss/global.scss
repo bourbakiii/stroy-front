@@ -3,19 +3,34 @@
 @tailwind components;
 @tailwind utilities;
 @mixin font($fname, $fstyle, $fweight, $furl) {
-    @font-face {
-        font-family: $fname;
-        font-style: $fstyle;
-        font-weight: $fweight;
-        font-display: swap;
-        src: url("#{$furl}.ttf");
-    }
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    font-display: swap;
+    src: url("#{$furl}.ttf");
+  }
 }
 
 
-html, #app{
-    min-height: 100vh;
+html, #app {
+  min-height: 100vh;
 }
-#app{
-display: flex;
+
+#app {
+}
+
+.toast {
+  padding: 1rem 0.5rem !important;
+  min-height: auto !important;
+  height: max-content !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  > * {
+    font-size: 0.8rem !important;
+  }
+
 }
