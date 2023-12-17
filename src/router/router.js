@@ -18,6 +18,14 @@ const routes = [
         component: () => import('@/pages/SignIn.vue')
     },
     {
+        path: '/building',
+        name: 'Create building',
+        meta:{
+            layout: 'sidebar-layout',
+        },
+        component: () => import('@/pages/Building.vue')
+    },
+    {
         path: '/sign-up',
         name: 'Sign up',
         meta:{

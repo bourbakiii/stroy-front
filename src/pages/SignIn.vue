@@ -18,7 +18,6 @@ const form = reactive({
   password: null,
 });
 const errors = ref({});
-
 async function signUpHandler() {
   errors.value = {};
   try {
