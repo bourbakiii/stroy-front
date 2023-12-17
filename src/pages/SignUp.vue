@@ -28,8 +28,7 @@ async function signUpHandler() {
     await axiosInstance.post("auth/signup", form);
     $router.push('/sign-in');
   } catch (error) {
-    if (error.response.status === 403) console.log("Validation errors");
-    errors.value = error.response.data.error;
+    if (error?.response.status === 403)     errors.value = error?.response.data.error;
   }
 }
 
@@ -61,7 +60,7 @@ async function signUpHandler() {
                         type="password" required/>
             <SelectField :isInvalid="Boolean(errors['user_type_id'])" v-model.trim="form.user_type_id"
                          :options="type_of_users" value_key="id" label_key="name" label="Type"/>
-            <ButtonElement type="submit"/>
+            <ButtonElement type="submit">Sign up</ButtonElement>
             <ErrorsListElement v-if="Object.keys(errors).length>0" :errors="errors"/>
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
               Already have account?

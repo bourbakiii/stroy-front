@@ -18,12 +18,28 @@ const routes = [
         component: () => import('@/pages/SignIn.vue')
     },
     {
-        path: '/building',
+        path: '/buildings',
+        name: 'Your building',
+        meta:{
+            layout: 'sidebar-layout',
+        },
+        component: () => import('@/pages/Buildings.vue')
+    },
+    {
+        path: '/buildings/:id',
+        name: 'Update building',
+        meta:{
+            layout: 'sidebar-layout',
+        },
+        component: () => import('@/pages/CEBuilding.vue')
+    },
+    {
+        path: '/buildings/create',
         name: 'Create building',
         meta:{
             layout: 'sidebar-layout',
         },
-        component: () => import('@/pages/Building.vue')
+        component: () => import('@/pages/CEBuilding.vue')
     },
     {
         path: '/sign-up',

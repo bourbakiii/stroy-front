@@ -10,13 +10,13 @@ import {useToast} from "vue-toastification";
 
 const toast = useToast();
 
-
 const $router = useRouter();
 
 const form = reactive({
   email: null,
   password: null,
 });
+
 const errors = ref({});
 async function signUpHandler() {
   errors.value = {};
@@ -24,9 +24,9 @@ async function signUpHandler() {
     await axiosInstance.post("auth/signin", form);
     $router.push('/');
   } catch (error) {
-    toast.error(error.response.data.message || error.message);
-    if (error.response.status === 403) console.log("Validation errors");
-    errors.value = error.response.data.error;
+    toast.error(error?.response.data.message || error.message);
+    if (error?.response.status === 403)     errors.value = error?.response.data.error;
+
   }
 }
 
@@ -46,7 +46,7 @@ async function signUpHandler() {
                         name="email" id="email" required/>
             <InputField :isInvalid="Boolean(errors['password'])" v-model.trim="form.password" placeholder="••••••••"
                         label="Password" name="password" type="password" required/>
-            <ButtonElement type="submit"/>
+            <ButtonElement type="submit">Sign in</ButtonElement>
             <ErrorsListElement v-if="Object.keys(errors).length>0" :errors="errors"/>
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
               Want to create account?
