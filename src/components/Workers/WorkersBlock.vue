@@ -12,7 +12,9 @@ onMounted(async () => {
 </script>
 
 <template>
+  <div class="grid grid-cols-3 gap-4">
   <Worker v-for="worker in workers" :worker="worker"/>
+  </div>
 </template>
 
 <style scoped lang="scss">

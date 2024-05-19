@@ -7,12 +7,15 @@ defineProps({
 </script>
 
 <template>
-  <RouterLink :to="`/workers/${$props.worker.id}`" class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$props.worker.name}}</h5>
-    </a>
-    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{$props.worker.type_of_worker.name}}</p>
-  </RouterLink>
+    <RouterLink  :to="`/workers/${$props.worker.id}`" class="w-full max-w-sm shadow-2xl bg-white rounded-lg sahdow-lg overflow-hidden flex flex-col justify-center items-center">
+      <div>
+        <img class="object-center object-cover h-auto w-full" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="photo">
+      </div>
+      <div class="text-center py-8 sm:py-6">
+        <p class="text-xl text-gray-700 font-bold mb-2">{{$props.worker.name}}</p>
+        <p class="text-base text-gray-400 font-normal">{{$props.worker.type_of_worker.name}}</p>
+      </div>
+    </RouterLink>
 
 </template>
 

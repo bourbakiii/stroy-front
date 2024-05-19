@@ -71,6 +71,15 @@ export const routes = [
         component: () => import('@/pages/CEWorker.vue')
     },
     {
+        path: '/brigades/create',
+        name: 'Создать бригаду',
+        meta: {
+            show_in_sidebar: true,
+            layout: 'sidebar-layout',
+        },
+        component: () => import('@/pages/CEBrigade.vue')
+    },
+    {
         path: '/sign-up',
         name: 'Регистрация',
         meta: {
