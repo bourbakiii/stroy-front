@@ -1,50 +1,79 @@
 import {createRouter, createWebHistory} from "vue-router";
 
-const routes = [
+export const routes = [
     {
         path: '/',
-        name: 'Index',
-        meta:{
+        name: 'Главная',
+        meta: {
+            show_in_sidebar: true,
             layout: 'sidebar-layout',
-            },
+        },
         component: () => import('@/pages/Main.vue')
     },
     {
         path: '/sign-in',
-        name: 'Sign in',
-        meta:{
-        layout: 'empty-layout',
+        name: 'Вход',
+        meta: {
+            layout: 'empty-layout',
         },
         component: () => import('@/pages/SignIn.vue')
     },
     {
         path: '/buildings',
-        name: 'Your building',
-        meta:{
+        name: 'Ваши объекты',
+        meta: {
+            show_in_sidebar: true,
             layout: 'sidebar-layout',
         },
         component: () => import('@/pages/Buildings.vue')
     },
     {
         path: '/buildings/:id',
-        name: 'Update building',
-        meta:{
+        name: 'Редактирование объекта',
+        meta: {
             layout: 'sidebar-layout',
         },
         component: () => import('@/pages/CEBuilding.vue')
     },
     {
         path: '/buildings/create',
-        name: 'Create building',
-        meta:{
+        name: 'Создать объект',
+        meta: {
+            show_in_sidebar: true,
             layout: 'sidebar-layout',
         },
         component: () => import('@/pages/CEBuilding.vue')
     },
     {
+        path: '/workers',
+        name: 'Рабочие',
+        meta: {
+            show_in_sidebar: true,
+            layout: 'sidebar-layout',
+        },
+        component: () => import('@/pages/Workers.vue')
+    },
+    {
+        path: '/workers/:id',
+        name: 'Редактирование рабочего',
+        meta: {
+            layout: 'sidebar-layout',
+        },
+        component: () => import('@/pages/CEWorker.vue')
+    },
+    {
+        path: '/workers/create',
+        name: 'Добавить рабочего',
+        meta: {
+            show_in_sidebar: true,
+            layout: 'sidebar-layout',
+        },
+        component: () => import('@/pages/CEWorker.vue')
+    },
+    {
         path: '/sign-up',
-        name: 'Sign up',
-        meta:{
+        name: 'Регистрация',
+        meta: {
             layout: 'empty-layout',
         },
         component: () => import('@/pages/SignUp.vue')

@@ -18,6 +18,7 @@ const form = reactive({
 });
 
 const errors = ref({});
+
 async function signUpHandler() {
   errors.value = {};
   try {
@@ -25,7 +26,7 @@ async function signUpHandler() {
     $router.push('/');
   } catch (error) {
     toast.error(error?.response.data.message || error.message);
-    if (error?.response.status === 403)     errors.value = error?.response.data.error;
+    if (error?.response.status === 403) errors.value = error?.response.data.error;
 
   }
 }
@@ -39,20 +40,20 @@ async function signUpHandler() {
           class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
         <div class="space-y-4 md:space-y-6 p-[1rem]">
           <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-            Sign in to your account
+            Вход в аккаунт
           </h1>
           <div class="space-y-4 md:space-y-6">
             <InputField :isInvalid="Boolean(errors['email'])" v-model.trim="form.email" label="Email" type="email"
                         name="email" id="email" required/>
             <InputField :isInvalid="Boolean(errors['password'])" v-model.trim="form.password" placeholder="••••••••"
-                        label="Password" name="password" type="password" required/>
+                        label="Пароль" name="password" type="password" required/>
             <ButtonElement type="submit">Sign in</ButtonElement>
             <ErrorsListElement v-if="Object.keys(errors).length>0" :errors="errors"/>
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-              Want to create account?
-              <LinkElement to="/sign-up">Sign up</LinkElement>
+              Создать аккаут?
+              <LinkElement to="/sign-up">Регистрация</LinkElement>
             </p>
-            <LinkElement to="/forgot-password"> Forgot password?</LinkElement>
+            <LinkElement to="/forgot-password">Забыли пароль?</LinkElement>
           </div>
         </div>
       </div>

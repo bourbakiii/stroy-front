@@ -28,7 +28,7 @@ async function signUpHandler() {
     await axiosInstance.post("auth/signup", form);
     $router.push('/sign-in');
   } catch (error) {
-    if (error?.response.status === 403)     errors.value = error?.response.data.error;
+    if (error?.response.status === 403) errors.value = error?.response.data.error;
   }
 }
 
@@ -36,13 +36,12 @@ async function signUpHandler() {
 
 <template>
   <section class="bg-gray-50 dark:bg-gray-900 w-full py-[2rem] h-auto">
-    {{ errors }}
     <form @submit.prevent="signUpHandler" class="flex flex-col items-center justify-center px-6 py-8 mx-auto  lg:py-0">
       <div
           class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
         <div class="space-y-4 md:space-y-6 p-[1rem]">
           <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-            Sign in to your account
+            Регситрация
           </h1>
           <div class="space-y-4 md:space-y-6">
             <InputField :isInvalid="Boolean(errors['first_name'])" v-model.trim="form.first_name" label="First name"
@@ -63,12 +62,10 @@ async function signUpHandler() {
             <ButtonElement type="submit">Sign up</ButtonElement>
             <ErrorsListElement v-if="Object.keys(errors).length>0" :errors="errors"/>
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-              Already have account?
-              <RouterLink to="/sign-in" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign
-                in
+              Уже есть аккаунт?
+              <RouterLink to="/sign-in" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Войти
               </RouterLink>
             </p>
-
           </div>
         </div>
       </div>
