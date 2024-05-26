@@ -1,16 +1,23 @@
 <template>
   <component :key="$route.meta.layout" :is="LAYOUT_COMPONENT">
-      <template v-slot:page-render>
-        <router-view v-slot="{ Component, route }">
-            <component :key="$route.path" class="page" :is="Component"/>
-        </router-view>
-      </template>
+    <template v-slot:page-render>
+      <router-view v-slot="{ Component, route }">
+        <component :key="$route.path" class="page" :is="Component"/>
+      </router-view>
+    </template>
   </component>
 </template>
 
 <script setup>
 import {defineAsyncComponent, ref, watch} from 'vue';
 import {useRoute} from 'vue-router';
+
+import {onMounted} from 'vue'
+import {initFlowbite} from 'flowbite'
+
+onMounted(() => {
+  initFlowbite()
+});
 
 const $route = ref(useRoute());
 

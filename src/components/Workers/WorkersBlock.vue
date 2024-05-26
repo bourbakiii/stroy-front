@@ -13,7 +13,9 @@ onMounted(async () => {
 
 <template>
   <div class="grid grid-cols-3 gap-4">
-  <Worker v-for="worker in workers" :worker="worker"/>
+    <RouterLink class="hover:no-underline" v-for="worker in workers" :to="`/workers/${worker.id}`">
+      <Worker :worker="worker"/>
+    </RouterLink>
   </div>
 </template>
 

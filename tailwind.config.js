@@ -1,11 +1,16 @@
+import flowbite from 'flowbite/plugin';
+
 /** @type {import('tailwindcss').Config} */
 export default {
     purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
     darkMode: true,
-    content: [],
+    content: [
+        "./index.html",
+        "./src/**/*.{vue,js,ts,jsx,tsx}",
+        "./node_modules/flowbite/**/*.js",
+    ],
     theme: {
         extend: {
-
             colors: {
                 primary: {
                     "50": "#eff6ff",
@@ -65,6 +70,9 @@ export default {
             }
         },
     },
-    plugins: [],
+    plugins: [
+        flowbite
+    ],
+
 }
 
